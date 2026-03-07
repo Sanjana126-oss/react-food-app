@@ -1,0 +1,17 @@
+.track-order-container { padding: 40px 10%; background-color: #fff; min-height: 80vh; }
+.back-btn { background: none; border: none; color: #ff6347; cursor: pointer; font-weight: 700; margin-bottom: 20px; }
+.tracking-content { display: flex; justify-content: space-between; gap: 50px; margin-top: 30px; }
+
+/* Timeline Logic */
+.status-timeline { flex: 1; border-left: 3px solid #eee; padding-left: 30px; position: relative; }
+.status-item { position: relative; padding-bottom: 50px; }
+.status-dot { position: absolute; left: -39px; top: 0; width: 15px; height: 15px; background-color: #eee; border-radius: 50%; border: 3px solid white; }
+.status-item.active .status-dot { background-color: #60b246; box-shadow: 0 0 10px #60b246; }
+.status-item.active { border-left: 3px solid #60b246; margin-left: -33px; padding-left: 30px; }
+.status-text h3 { font-size: 18px; color: #ccc; }
+.active .status-text h3 { color: #282c3f; }
+
+/* Box styling */
+.order-details-box { flex: 0.8; background: #f9f9f9; padding: 25px; border-radius: 12px; }
+.total-row { display: flex; justify-content: space-between; margin: 15px 0; font-size: 18px; }
+.address-info { margin-top: 20px; font-size: 14px; color: #555; }

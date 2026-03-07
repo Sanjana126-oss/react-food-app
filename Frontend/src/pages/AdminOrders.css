@@ -1,0 +1,65 @@
+/* Container for the whole page */
+.order-page {
+    padding: 20px;
+    width: 100%;
+}
+
+.order-page h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Individual Order Row */
+.order-item {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr; /* Image, Details, Count, Price, Status */
+    align-items: start;
+    gap: 30px;
+    border: 1px solid #ff6347;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #505050;
+    background-color: white;
+    border-radius: 4px;
+}
+
+/* FIX: The giant image size */
+.order-item img {
+    width: 50px; /* This shrinks the giant clock/parcel icon */
+    height: auto;
+}
+
+.order-item-food {
+    font-weight: 600;
+}
+
+.order-item-name {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.order-item-address {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* The Status Dropdown (Select) */
+.order-item select {
+    background-color: #fff2ef;
+    border: 1px solid #ff6347;
+    width: max(10vw, 120px);
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+    .order-item {
+        grid-template-columns: 0.5fr 2fr 1fr;
+        font-size: 12px;
+        gap: 15px;
+    }
+}

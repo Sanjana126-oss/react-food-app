@@ -1,0 +1,32 @@
+.checkout {
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.checkout textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.place-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff5200;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

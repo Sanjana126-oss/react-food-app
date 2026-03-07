@@ -1,0 +1,58 @@
+.my-orders {
+    margin: 50px auto;
+    width: 80%;
+}
+
+.my-orders h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.my-orders-order {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1.5fr 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    padding: 15px 20px;
+    color: #454545;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.order-icon {
+    width: 40px;
+}
+
+.order-status span {
+    color: #60b246; /* Foodie Green */
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.track-btn {
+    padding: 10px 0;
+    border: 1px solid #ffccba;
+    border-radius: 4px;
+    background-color: #fff2ed;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.track-btn:hover {
+    background-color: #ffe1d5;
+}
+
+@media (max-width: 900px) {
+    .my-orders-order {
+        grid-template-columns: 1fr 2fr 1fr;
+        row-gap: 10px;
+    }
+}

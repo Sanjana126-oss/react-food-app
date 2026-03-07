@@ -1,0 +1,67 @@
+.cart-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: #60b246; /* Food Green Color */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.cart-count-total {
+  display: flex;
+  flex-direction: column;
+}
+
+.count-badge {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.total-amount {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.plus-taxes {
+  font-size: 10px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.view-cart-button, .checkout-button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-button {
+  background-color: white;
+  color: #60b246;
+}
+
+.view-cart-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.checkout-button:hover {
+  background-color: #f1f1f1;
+}

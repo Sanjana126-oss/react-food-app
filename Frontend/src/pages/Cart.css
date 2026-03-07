@@ -1,0 +1,92 @@
+.cart {
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #ff5200;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-total {
+  margin-top: 20px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff5200;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.empty-cart {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.browse-btn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  background: #ff5200;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.bill {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.discount {
+  color: green;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+.coupon-box {
+  margin: 15px 0;
+}
+
+.coupon-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}

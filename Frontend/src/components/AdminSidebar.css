@@ -1,0 +1,77 @@
+.admin-sidebar {
+    width: 20%; /* Sidebar width */
+    min-width: 220px;
+    min-height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e2e2;
+    padding-top: 20px;
+}
+
+.sidebar-title {
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar-title p {
+    font-weight: 800;
+    color: #ff6347; /* Theme Orange */
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.sidebar-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between icon and text */
+    padding: 12px 20px;
+    border: 1px solid #f0f0f0;
+    border-right: 0;
+    border-radius: 8px 0px 0px 8px; /* Rounded left side only */
+    cursor: pointer;
+    text-decoration: none;
+    color: #444;
+    transition: 0.3s;
+}
+
+/* THE FIX: Shinks the giant icons */
+.sidebar-option img {
+    width: 22px; 
+    height: 22px;
+    object-fit: contain;
+}
+
+.sidebar-option p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Styling for the active page link */
+.sidebar-option.active {
+    background-color: #fff2ef; /* Light orange tint */
+    border-color: #ff6347;
+    color: #ff6347;
+    font-weight: 700;
+}
+
+.sidebar-option:hover {
+    background-color: #fcfcfc;
+    border-color: #ccc;
+}
+
+/* Mobile responsive fix */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        width: 70px;
+        min-width: 70px;
+    }
+    .sidebar-option p, .sidebar-title p {
+        display: none; /* Hide text on mobile, show only icons */
+    }
+}

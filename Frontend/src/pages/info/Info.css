@@ -1,0 +1,276 @@
+.info-page {
+    padding: 60px 10%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+.info-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px;
+    background-color: #fff2ed; /* Light orange background */
+    border-radius: 15px;
+}
+
+.info-header h1 {
+    font-size: 42px;
+    color: #ff6347;
+    margin-bottom: 10px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+}
+
+.info-section h2 {
+    color: #282c3f;
+    margin-bottom: 15px;
+    border-left: 5px solid #ff6347;
+    padding-left: 15px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.info-box {
+    background: #f9f9f9;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.info-box h3 {
+    font-size: 30px;
+    color: #ff6347;
+}
+
+/* Contact Page Form & Grid */
+.contact-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-card {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fdfdfd;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline-color: #ff6347;
+}
+
+.contact-form button {
+    padding: 15px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.legal h3 {
+    margin-top: 30px;
+    color: #282c3f;
+}
+
+.contact-page {
+    background-color: #fcfcfc;
+}
+
+.contact-main-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+/* Department Cards */
+.contact-dept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.dept-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.dept-card:hover {
+    border-color: #ff6347;
+    transform: translateY(-5px);
+}
+
+.dept-card img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.dept-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #282c3f;
+}
+
+.dept-card p {
+    font-size: 13px;
+    color: #686b78;
+    margin-bottom: 10px;
+}
+
+.dept-card strong {
+    color: #ff6347;
+    font-size: 14px;
+}
+
+/* Form Styling */
+.contact-form-wrapper {
+    position: sticky;
+    top: 100px;
+}
+
+.contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #3d4152;
+}
+
+.input-group input, .input-group textarea, .input-group select {
+    padding: 12px;
+    border: 1px solid #dcdce3;
+    border-radius: 8px;
+    outline: none;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #ff6347;
+}
+
+.submit-request-btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-request-btn:hover {
+    background-color: #e54b30;
+}
+
+/* Locations & Social */
+.location-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.social-row {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.fb { background-color: #3b5998; }
+.ig { background-color: #e4405f; }
+.tw { background-color: #1da1f2; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-main-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-form-wrapper {
+        position: static;
+    }
+}
+
+.social-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 40px; /* Perfect size for professional look */
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: grayscale(100%); /* Makes them look elegant by default */
+    opacity: 0.7;
+}
+
+/* Hover Effect: Icon turns into original color and pops up */
+.social-icon:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Special styling for individual colors on hover (Optional) */
+.social-row a:nth-child(1) :hover { filter: drop-shadow(0 0 5px #1877F2); } /* FB Blue */
+.social-row a:nth-child(2) :hover { filter: drop-shadow(0 0 5px #E4405F); } /* IG Pink */
+.social-row a:nth-child(3) :hover { filter: drop-shadow(0 0 5px #000000); } /* X Black */
+.social-row a:nth-child(4) :hover { filter: drop-shadow(0 0 5px #0A66C2); } /* LI Blue */

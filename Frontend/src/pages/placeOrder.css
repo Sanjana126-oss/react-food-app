@@ -1,0 +1,104 @@
+.place-order {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Left Side: Delivery Information */
+.place-order-left {
+    width: 100%;
+    max-width: max(40%, 500px);
+}
+
+.place-order-left .title {
+    font-size: max(2vw, 25px);
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.place-order-left input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: #60b246; /* Match your CartBar green */
+    font-size: 15px;
+}
+
+.multi-fields {
+    display: flex;
+    gap: 10px;
+}
+
+/* Right Side: Cart Totals */
+.place-order-right {
+    width: 100%;
+    max-width: max(30%, 400px);
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ececec;
+}
+
+.place-order-right h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    margin: 12px 0;
+}
+
+.cart-total-details b {
+    color: #000;
+}
+
+.place-order-right hr {
+    margin: 10px 0;
+    border: 0.5px solid #e2e2e2;
+}
+
+.place-order-right button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+    background-color: #60b246; /* Food App Green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.place-order-right button:hover {
+    background-color: #4c9137;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .place-order {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .place-order-left, .place-order-right {
+        max-width: 100%;
+    }
+
+    .multi-fields {
+        flex-direction: column;
+        gap: 0;
+    }
+}

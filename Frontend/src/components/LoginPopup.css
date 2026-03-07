@@ -1,0 +1,174 @@
+/* ==========================================
+   1. OVERLAY (The Background)
+   ========================================== */
+.login-popup {
+    position: fixed;
+    z-index: 9999; /* Ensures it's above Navbar and all content */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(6px); /* Professional frosted glass effect */
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ==========================================
+   2. POPUP CONTAINER (The White Box)
+   ========================================== */
+.login-popup-container {
+    width: max(23vw, 350px);
+    color: #4b4b4b;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 35px 40px;
+    border-radius: 20px; /* Modern rounded corners */
+    font-size: 14px;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.25);
+    animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Unique bouncy entrance */
+}
+
+/* ==========================================
+   3. HEADER (Title & Close Button)
+   ========================================== */
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1c1c1c;
+}
+
+.login-popup-title h2 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.close-icon {
+    font-size: 32px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.close-icon:hover {
+    color: #ff6347; /* Tomato orange */
+    transform: rotate(90deg); /* Modern interaction */
+}
+
+/* ==========================================
+   4. INPUT FIELDS
+   ========================================== */
+.login-popup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-popup-inputs input {
+    outline: none;
+    border: 1px solid #e2e2e2;
+    background-color: #fcfcfc;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.login-popup-inputs input:focus {
+    border-color: #ff6347;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 99, 71, 0.1); /* Soft glow on focus */
+}
+
+/* ==========================================
+   5. ACTION BUTTON
+   ========================================== */
+.login-popup-container button {
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    color: white;
+    background-color: #ff6347;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
+}
+
+.login-popup-container button:hover {
+    background-color: #e54b30;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
+}
+
+.login-popup-container button:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   6. CHECKBOX & TOGGLE TEXT
+   ========================================== */
+.login-popup-condition {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: -10px;
+    color: #676767;
+}
+
+.login-popup-condition input {
+    margin-top: 4px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.login-popup-container p {
+    color: #4b4b4b;
+    text-align: center;
+}
+
+.login-popup-container p span {
+    color: #ff6347;
+    font-weight: 800;
+    cursor: pointer;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.login-popup-container p span:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   7. KEYFRAMES
+   ========================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    70% { transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   8. MOBILE RESPONSIVE
+   ========================================== */
+@media (max-width: 450px) {
+    .login-popup-container {
+        width: 90%;
+        padding: 30px 25px;
+        margin: 20px;
+    }
+}

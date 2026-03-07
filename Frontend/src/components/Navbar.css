@@ -1,0 +1,163 @@
+/* --- Main Navbar Container --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6%;
+  background-color: #ff6347; /* Tomato Orange */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* --- LOGO FIX --- */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.app-name {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* --- NAV LINKS ALIGNMENT --- */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-link {
+  color: white !important;
+  text-decoration: none !important; /* Removes underline and blue color */
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.admin-link-btn {
+  background-color: #282c3f;
+  color: #ff6347 !important;
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #ff6347;
+}
+
+/* --- Cart Badge --- */
+.cart-icon {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #282c3f;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.navbar-signin-btn {
+  background-color: white;
+  color: #ff6347;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* --- PROFILE AREA --- */
+.navbar-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-info img {
+  width: 25px;
+  filter: invert(1); /* Makes black icon white */
+}
+
+.profile-info p {
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0;
+  color: white;
+}
+
+/* --- THE DROPDOWN BOX --- */
+.profile-dropdown {
+  position: absolute;
+  display: flex; /* Always flex when rendered by React */
+  flex-direction: column;
+  gap: 10px;
+  right: 0;
+  top: 45px;
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #ff6347;
+  list-style: none; /* No dots */
+  width: 150px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* Fixed icon size in dropdown */
+.profile-dropdown img {
+    width: 18px !important;
+    height: 18px;
+    object-fit: contain;
+}
+
+.profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.profile-dropdown li p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.profile-dropdown li:hover p {
+    color: #ff6347;
+}
+
+.profile-dropdown hr {
+    border: none;
+    height: 1px;
+    background-color: #f0f0f0;
+    margin: 2px 0;
+}
