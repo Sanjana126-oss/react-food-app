@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Restaurant from "./pages/Restaurant";
 import Cart from "./pages/Cart";
-import PlaceOrder from "./pages/PlaceOrder";
+import PlaceOrder from "./pages/placeOrder";
 import MyOrders from "./pages/MyOrders";
 import Success from "./pages/success"; 
 import TrackOrder from "./pages/TrackOrder";   
@@ -22,7 +22,7 @@ import Contact from "./pages/info/Contact";
 import Privacy from "./pages/info/Privacy";
 
 // --- ADMIN PAGES ---
-import AdminSidebar from "./components/AdminSideBar";
+import AdminSidebar from "./components/AdminSidebar";
 import AdminDashboard from "./pages/AdminDashboard";
 import AddFood from "./pages/AddFood"; // FIXED: Changed 'Addfood' to 'AddFood'
 import ListFood from "./pages/ListFood";
