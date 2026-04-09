@@ -4,7 +4,7 @@ import { CartContext } from '../context/CartContext';
 import './placeOrder.css';
 
 const PlaceOrder = () => {
-    const { cart, total, clearCart } = useContext(CartContext); // Added clearCart here
+    const { cart, total, clearCart } = useContext(CartContext); 
     const navigate = useNavigate();
 
     const [data, setData] = useState({
@@ -28,14 +28,15 @@ const PlaceOrder = () => {
         }));
 
         const orderData = {
-            userId: "65f123456789012345678901", // Should come from your user state/token
+            userId: localStorage.getItem("userId") || "65f123456789012345678901", 
             items: orderItems,
             amount: total + 40,
             address: data,
         };
 
         try {
-            const response = await fetch("http://localhost:5000/api/order/place", {
+            // FIXED: Changed localhost to your live Render URL
+            const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/order/place", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(orderData)
@@ -44,18 +45,15 @@ const PlaceOrder = () => {
             const result = await response.json();
 
             if (result.success) {
-                alert("SUCCESS: Order placed! Your cart is now empty.");
-                
-                // 1. EMPTY THE CART LOCALLY
+                alert("SUCCESS: Order placed!");
                 clearCart(); 
-                
-                // 2. MOVE TO ORDERS PAGE
                 navigate('/myorders'); 
             } else {
                 alert("Error: " + result.message);
             }
         } catch (error) {
-            alert("Server Error");
+            console.error(error);
+            alert("Server Error: Check if backend is awake.");
         }
     };
 
