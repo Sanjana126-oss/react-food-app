@@ -6,7 +6,7 @@ const ListFood = () => {
 
   // Fetch all food items from database
   const fetchList = async () => {
-    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/food/list");
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/food/list");
     const result = await response.json();
     if (result.success) {
       setList(result.data);
@@ -15,7 +15,7 @@ const ListFood = () => {
 
   // Remove food function
   const removeFood = async (foodId) => {
-    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/food/remove", {
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/food/remove", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({id: foodId})
@@ -44,7 +44,7 @@ const ListFood = () => {
         </div>
         {list.map((item, index) => (
           <div key={index} className='list-table-format'>
-            <img src={`https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../images/` + item.image} alt="" />
+            <img src={`https://react-food-app-1-mkmv.onrender.com...onrender.com/api/.../images/` + item.image} alt="" />
             <p>{item.name}</p>
             <p>{item.category}</p>
             <p>₹{item.price}</p>

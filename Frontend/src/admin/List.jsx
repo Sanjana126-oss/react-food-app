@@ -4,7 +4,7 @@ const List = () => {
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
-    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/food/list");
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/food/list");
     const result = await response.json();
     if (result.success) {
       setList(result.data);
@@ -12,7 +12,7 @@ const List = () => {
   }
 
   const removeFood = async (foodId) => {
-    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/food/remove", {
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/food/remove", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({id: foodId})

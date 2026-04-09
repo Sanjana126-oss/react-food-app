@@ -10,7 +10,7 @@ const FoodDisplay = ({ category, search }) => {
   const fetchFoodList = async () => {
     setLoading(true);
     try {
-      const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/food/list");
+      const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/food/list");
       const result = await response.json();
       
       if (result.success) {

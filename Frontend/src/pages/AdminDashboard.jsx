@@ -5,9 +5,15 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState({ totalOrders: 0, totalFood: 0, totalRevenue: 0 });
 
   useEffect(() => {
-    fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/order/stats")
+    // FIXED URL: Removed the "double" link and dots
+    fetch("https://react-food-app-1-mkmv.onrender.com/api/order/stats")
       .then(res => res.json())
-      .then(data => { if(data.success) setStats(data.stats) });
+      .then(data => { 
+        if(data.success && data.stats) {
+          setStats(data.stats);
+        }
+      })
+      .catch(err => console.error("Error fetching stats:", err));
   }, []);
 
   return (

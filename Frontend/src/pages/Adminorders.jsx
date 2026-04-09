@@ -5,7 +5,7 @@ const AdminOrders = () => {
   const [orders, setOrders] = useState([]);
 
   const fetchAllOrders = async () => {
-    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/order/list");
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/order/list");
     const result = await response.json();
     if (result.success) {
       setOrders(result.data);
@@ -13,7 +13,7 @@ const AdminOrders = () => {
   }
 
   const statusHandler = async (event, orderId) => {
-    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/order/status", {
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/order/status", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ orderId, status: event.target.value })

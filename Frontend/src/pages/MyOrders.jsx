@@ -11,7 +11,7 @@ const MyOrders = () => {
   const fetchOrders = async () => {
     try {
       console.log("Attempting to fetch orders...");
-      const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/order/list");
+      const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/order/list");
       const result = await response.json();
       
       console.log("Data received from server:", result);

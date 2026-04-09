@@ -12,7 +12,7 @@ const Contact = () => {
     const handleSend = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("https://react-food-app-1-mkmv.onrender.com:https://...onrender.com/api/.../api/contact/send", {
+            const response = await fetch("https://react-food-app-1-mkmv.onrender.com/api/contact/send", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
