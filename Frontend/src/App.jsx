@@ -13,85 +13,58 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Restaurant from "./pages/Restaurant";
 import Cart from "./pages/Cart";
-import PlaceOrder from "./pages/placeOrder";
+import PlaceOrder from "./pages/PlaceOrder"; // FIXED: Capital 'P' to match your file PlaceOrder.jsx
 import MyOrders from "./pages/MyOrders";
-import Success from "./pages/success"; 
+import Success from "./pages/success"; // Match: success.jsx
 import TrackOrder from "./pages/TrackOrder";   
 import About from "./pages/info/About";
 import Contact from "./pages/info/Contact";
 import Privacy from "./pages/info/Privacy";
 
 // --- ADMIN PAGES ---
-import AdminSidebar from "./components/AdminSidebar";
+import AdminSidebar from "./components/AdminSideBar";
 import AdminDashboard from "./pages/AdminDashboard";
-import AddFood from "./pages/AddFood"; // FIXED: Changed 'Addfood' to 'AddFood'
+import AddFood from "./pages/AddFood"; // Match: AddFood.jsx
 import ListFood from "./pages/ListFood";
-import AdminOrders from "./pages/Adminorders"; 
+import AdminOrders from "./pages/Adminorders"; // Match: Adminorders.jsx
 import AdminRequests from "./pages/AdminRequests";
 
-// ==========================================
-// 1. USER LAYOUT
-// ==========================================
 const UserLayout = ({ setShowLogin, token, setToken }) => {
   return (
     <div className="app">
       <Navbar setShowLogin={setShowLogin} token={token} setToken={setToken} />
       <hr />
-      <div className="user-container">
-        <Outlet />
-      </div>
+      <div className="user-container"><Outlet /></div>
       <CartBar />
       <Footer />
     </div>
   );
 };
 
-// ==========================================
-// 2. ADMIN LAYOUT
-// ==========================================
 const AdminLayout = () => {
   const role = localStorage.getItem("role");
-  if (role !== "admin") {
-    return <Navigate to="/" />;
-  }
+  if (role !== "admin") return <Navigate to="/" />;
   return (
     <div className="admin-root">
       <AdminSidebar />
       <div className="admin-main-area">
         <div className="admin-top-header">
           <h2>Management Console</h2>
-          <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            <span style={{ fontSize: "14px", fontWeight: "600", color: "#333" }}>
-              Welcome, Admin
-            </span>
-            <button 
-              className="admin-logout-btn" 
-              onClick={() => { localStorage.clear(); window.location.href = "/"; }}
-            >
-              Logout
-            </button>
-          </div>
+          <button className="admin-logout-btn" onClick={() => { localStorage.clear(); window.location.href = "/"; }}>Logout</button>
         </div>
-        <div className="admin-page-padding">
-          <Outlet />
-        </div>
+        <div className="admin-page-padding"><Outlet /></div>
       </div>
     </div>
   );
 };
 
-// ==========================================
-// 3. MAIN APP COMPONENT
-// ==========================================
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [token, setToken] = useState("");
 
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
-    if (savedToken) {
-      setToken(savedToken);
-    }
+    if (savedToken) setToken(savedToken);
   }, []);
 
   return (
@@ -124,5 +97,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
