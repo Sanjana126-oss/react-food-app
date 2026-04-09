@@ -15,7 +15,7 @@ import Restaurant from "./pages/Restaurant";
 import Cart from "./pages/Cart";
 import PlaceOrder from "./pages/PlaceOrder";
 import MyOrders from "./pages/MyOrders";
-import Success from "./pages/Success";
+import Success from "./pages/success"; // Changed to lowercase 's' to fix Vercel error
 import TrackOrder from "./pages/TrackOrder";   
 import About from "./pages/info/About";
 import Contact from "./pages/info/Contact";
@@ -24,9 +24,9 @@ import Privacy from "./pages/info/Privacy";
 // --- ADMIN PAGES ---
 import AdminSidebar from "./components/AdminSideBar";
 import AdminDashboard from "./pages/AdminDashboard";
-import AddFood from "./pages/Addfood";
+import AddFood from "./pages/Addfood"; // Ensure your file is named Addfood.jsx
 import ListFood from "./pages/ListFood";
-import AdminOrders from "./pages/Adminorders";
+import AdminOrders from "./pages/Adminorders"; // Ensure your file is named Adminorders.jsx
 import AdminRequests from "./pages/AdminRequests";
 
 // ==========================================
