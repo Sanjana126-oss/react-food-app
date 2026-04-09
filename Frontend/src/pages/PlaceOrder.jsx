@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
-import './PlaceOrder.css';
+import './placeOrder.css';
 
 const PlaceOrder = () => {
     const { cart, total, clearCart } = useContext(CartContext); // Added clearCart here
