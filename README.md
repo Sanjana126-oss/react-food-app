@@ -1,4 +1,5 @@
 # Foodie App - Full Stack MERN Platform 🍕
+🚀 **[Live Demo Link](https://react-food-app-joev.vercel.app)**
 
 A comprehensive food delivery solution featuring a sleek customer interface and a robust administration dashboard.
 
@@ -19,3 +20,11 @@ A comprehensive food delivery solution featuring a sleek customer interface and 
 1. Clone the repository.
 2. In the `Backend` folder: run `npm install` and `npm start`.
 3. In the `Frontend` folder: run `npm install` and `npm run dev`.
+---
+
+## 📝 Performance Note
+*This project is hosted on Render’s Free Tier. If the site has been inactive, the backend will "sleep." Please allow **30-40 seconds** for the server to wake up on the first request. Subsequent interactions will be instantaneous.*
+
+## 👨‍💻 Author
+**Sanjana Koddikar**
+- GitHub: [Sanjana126-oss](https://github.com/Sanjana126-oss)
