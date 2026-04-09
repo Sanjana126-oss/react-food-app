@@ -6,7 +6,7 @@ export default function RestaurantCard({ item }) {
   // FIX 1: Handle images from both local static data and database uploads
   const imageUrl = item.image && item.image.startsWith("http") 
     ? item.image 
-    : `http://localhost:5000/images/${item.image}`;
+    : `https://react-food-app-1-mkmv.onrender.com:5000/images/${item.image}`;
 
   return (
     /* FIX 2: MongoDB uses '_id'. We use the OR (||) operator to check both. 

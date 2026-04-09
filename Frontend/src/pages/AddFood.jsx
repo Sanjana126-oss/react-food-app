@@ -38,7 +38,7 @@ const AddFood = () => {
 
         try {
             // Send to Backend
-            const response = await fetch("http://localhost:5000/api/food/add", {
+            const response = await fetch("https://react-food-app-1-mkmv.onrender.com:5000/api/food/add", {
                 method: "POST",
                 body: formData 
                 // Do NOT set 'Content-Type' header here. Browser does it automatically for FormData.

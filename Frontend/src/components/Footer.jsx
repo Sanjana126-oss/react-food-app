@@ -10,7 +10,7 @@ const Footer = () => {
         if (!email) return alert("Please enter an email");
 
         try {
-            const response = await fetch("http://localhost:5000/api/newsletter/subscribe", {
+            const response = await fetch("https://react-food-app-1-mkmv.onrender.com:5000/api/newsletter/subscribe", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email })

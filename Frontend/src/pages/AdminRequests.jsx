@@ -6,7 +6,7 @@ const AdminRequests = () => {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/contact/list");
+      const response = await fetch("https://react-food-app-1-mkmv.onrender.com:5000/api/contact/list");
       const result = await response.json();
       
       console.log("Admin received:", result); // LOOK AT THIS IN THE BROWSER CONSOLE

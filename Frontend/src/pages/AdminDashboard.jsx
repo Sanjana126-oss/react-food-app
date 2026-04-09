@@ -5,7 +5,7 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState({ totalOrders: 0, totalFood: 0, totalRevenue: 0 });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/order/stats")
+    fetch("https://react-food-app-1-mkmv.onrender.com:5000/api/order/stats")
       .then(res => res.json())
       .then(data => { if(data.success) setStats(data.stats) });
   }, []);

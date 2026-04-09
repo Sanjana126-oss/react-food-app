@@ -4,7 +4,7 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   const fetchAllOrders = async () => {
-    const response = await fetch("http://localhost:5000/api/order/list");
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:5000/api/order/list");
     const result = await response.json();
     if (result.success) {
       setOrders(result.data);
@@ -12,7 +12,7 @@ const Orders = () => {
   }
 
   const statusHandler = async (event, orderId) => {
-    const response = await fetch("http://localhost:5000/api/order/status", {
+    const response = await fetch("https://react-food-app-1-mkmv.onrender.com:5000/api/order/status", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({ orderId, status: event.target.value })

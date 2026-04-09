@@ -14,7 +14,7 @@ const Restaurant = () => {
     const fetchRestaurantData = async () => {
       try {
         // 1. Try to find the item in your MongoDB Database (For items like Biryani)
-        const response = await fetch("http://localhost:5000/api/food/list");
+        const response = await fetch("https://react-food-app-1-mkmv.onrender.com:5000/api/food/list");
         const result = await response.json();
 
         if (result.success) {
@@ -62,7 +62,7 @@ const Restaurant = () => {
   // IMAGE LOGIC: Handles /images/pizza.jpg AND backend uploads
   const imageUrl = item.image && (item.image.startsWith("http") || item.image.startsWith("/")) 
     ? item.image 
-    : `http://localhost:5000/images/${item.image}`;
+    : `https://react-food-app-1-mkmv.onrender.com:5000/images/${item.image}`;
 
   return (
     <div className="restaurant-page">

@@ -25,7 +25,7 @@ const LoginPopup = ({ setShowLogin, setToken }) => {
         event.preventDefault();
         
         // Determine endpoint based on whether we are Logging in or Signing up
-        let newUrl = "http://localhost:5000/api/auth";
+        let newUrl = "https://react-food-app-1-mkmv.onrender.com:5000/api/auth";
         if (currState === "Login") {
             newUrl += "/login";
         } else {
