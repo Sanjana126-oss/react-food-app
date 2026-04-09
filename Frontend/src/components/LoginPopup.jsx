@@ -24,8 +24,9 @@ const LoginPopup = ({ setShowLogin, setToken }) => {
     const onLogin = async (event) => {
         event.preventDefault();
         
-        // Determine endpoint based on whether we are Logging in or Signing up
-        let newUrl = "https://react-food-app-1-mkmv.onrender.com:5000/api/auth";
+        // FIXED: Removed :5000 from the URL. Deployed apps use standard HTTPS.
+        let newUrl = "https://react-food-app-1-mkmv.onrender.com/api/auth";
+        
         if (currState === "Login") {
             newUrl += "/login";
         } else {
@@ -48,42 +49,35 @@ const LoginPopup = ({ setShowLogin, setToken }) => {
                 // 2. Save all info to LocalStorage
                 localStorage.setItem("token", result.token);
                 localStorage.setItem("user", result.name);
-                localStorage.setItem("role", result.role); // Important for Admin Dashboard
+                localStorage.setItem("role", result.role); 
 
                 // 3. Close the popup
                 setShowLogin(false); 
 
                 // 4. Role-based Redirection
                 if (result.role === "admin") {
-                    navigate("/admin"); // Take Joseph to Admin Panel
+                    navigate("/admin"); 
                 } else {
-                    navigate("/"); // Take regular users to Home
+                    navigate("/"); 
                 }
             } else {
                 alert(result.message);
             }
         } catch (error) {
             console.error("Login error:", error);
-            alert("Server is not responding. Please check if the Backend is running.");
+            alert("Server is not responding. Please check if the Backend is awake at: https://react-food-app-1-mkmv.onrender.com");
         }
     };
 
     return (
-        /* BACKGROUND OVERLAY: Clicking this specific div will close the popup */
         <div className='login-popup' onClick={() => setShowLogin(false)}>
-            
-            {/* FORM CONTAINER: e.stopPropagation() is the MAGIC fix. 
-                It prevents the "close" action from happening when you click inside this box. */}
             <form onSubmit={onLogin} className="login-popup-container" onClick={(e) => e.stopPropagation()}>
-                
                 <div className="login-popup-title">
                     <h2>{currState}</h2>
-                    {/* Manual close button */}
                     <span onClick={() => setShowLogin(false)} className="close-icon">×</span>
                 </div>
                 
                 <div className="login-popup-inputs">
-                    {/* Show Name input only if the state is 'Sign Up' */}
                     {currState === "Sign Up" && (
                         <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Your Name' required />
                     )}
@@ -100,7 +94,6 @@ const LoginPopup = ({ setShowLogin, setToken }) => {
                     <p>By continuing, I agree to the terms of use & privacy policy.</p>
                 </div>
 
-                {/* Switch between Login and Sign Up mode */}
                 {currState === "Login" ? (
                     <p>New to Foodie App? <span onClick={() => setCurrState("Sign Up")}>Create account</span></p>
                 ) : (
