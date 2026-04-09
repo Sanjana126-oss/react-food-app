@@ -15,7 +15,7 @@ import Restaurant from "./pages/Restaurant";
 import Cart from "./pages/Cart";
 import PlaceOrder from "./pages/PlaceOrder";
 import MyOrders from "./pages/MyOrders";
-import Success from "./pages/success"; // Changed to lowercase 's' to fix Vercel error
+import Success from "./pages/success"; 
 import TrackOrder from "./pages/TrackOrder";   
 import About from "./pages/info/About";
 import Contact from "./pages/info/Contact";
@@ -24,22 +24,21 @@ import Privacy from "./pages/info/Privacy";
 // --- ADMIN PAGES ---
 import AdminSidebar from "./components/AdminSideBar";
 import AdminDashboard from "./pages/AdminDashboard";
-import AddFood from "./pages/Addfood"; // Ensure your file is named Addfood.jsx
+import AddFood from "./pages/AddFood"; // FIXED: Changed 'Addfood' to 'AddFood'
 import ListFood from "./pages/ListFood";
-import AdminOrders from "./pages/Adminorders"; // Ensure your file is named Adminorders.jsx
+import AdminOrders from "./pages/Adminorders"; 
 import AdminRequests from "./pages/AdminRequests";
 
 // ==========================================
-// 1. USER LAYOUT (The Website Shell)
+// 1. USER LAYOUT
 // ==========================================
 const UserLayout = ({ setShowLogin, token, setToken }) => {
   return (
     <div className="app">
-      {/* Navbar gets the controls for the Login Popup */}
       <Navbar setShowLogin={setShowLogin} token={token} setToken={setToken} />
       <hr />
       <div className="user-container">
-        <Outlet /> {/* Renders Home, Cart, MyOrders, etc. */}
+        <Outlet />
       </div>
       <CartBar />
       <Footer />
@@ -48,16 +47,13 @@ const UserLayout = ({ setShowLogin, token, setToken }) => {
 };
 
 // ==========================================
-// 2. ADMIN LAYOUT (The Management Shell)
+// 2. ADMIN LAYOUT
 // ==========================================
 const AdminLayout = () => {
   const role = localStorage.getItem("role");
-
-  // SECURITY: If user is not an admin, kick them back to home
   if (role !== "admin") {
     return <Navigate to="/" />;
   }
-
   return (
     <div className="admin-root">
       <AdminSidebar />
@@ -76,9 +72,8 @@ const AdminLayout = () => {
             </button>
           </div>
         </div>
-        
         <div className="admin-page-padding">
-          <Outlet /> {/* Renders Admin Dashboard, Add, List, Orders, Requests */}
+          <Outlet />
         </div>
       </div>
     </div>
@@ -92,7 +87,6 @@ function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [token, setToken] = useState("");
 
-  // Check if user is already logged in when the app starts
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) {
@@ -102,15 +96,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* Ensure the page starts at the top on navigation */}
       <ScrollToTop />
-      
-      {/* LOGIN POPUP OVERLAY: Controlled by showLogin state */}
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} setToken={setToken} /> : null}
-
       <Routes>
-        
-        {/* --- CUSTOMER ROUTES --- */}
         <Route element={<UserLayout setShowLogin={setShowLogin} token={token} setToken={setToken} />}>
           <Route path="/" element={<Home />} />
           <Route path="/restaurant/:id" element={<Restaurant />} />
@@ -123,10 +111,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
         </Route>
-
-        {/* --- PRIVATE ADMIN ROUTES --- */}
         <Route path="/admin" element={<AdminLayout />}>
-          {/* Default admin page is the dashboard */}
           <Route index element={<AdminDashboard />} /> 
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="add" element={<AddFood />} />
@@ -134,10 +119,7 @@ function App() {
           <Route path="orders" element={<AdminOrders />} />
           <Route path="requests" element={<AdminRequests />} />
         </Route>
-
-        {/* Wildcard: Redirect any invalid URL to Home */}
         <Route path="*" element={<Navigate to="/" />} />
-
       </Routes>
     </BrowserRouter>
   );
