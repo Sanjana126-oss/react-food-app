@@ -24,7 +24,7 @@ const LoginPopup = ({ setShowLogin, setToken }) => {
     const onLogin = async (event) => {
         event.preventDefault();
         
-        // FIXED: Removed :5000 from the URL. Deployed apps use standard HTTPS.
+        // FIXED: Removed :https://...onrender.com/api/... from the URL. Deployed apps use standard HTTPS.
         let newUrl = "https://react-food-app-1-mkmv.onrender.com/api/auth";
         
         if (currState === "Login") {
